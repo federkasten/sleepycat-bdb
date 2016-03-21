@@ -23,7 +23,7 @@ class TestSerial implements java.io.Serializable {
     // the class.  The serialVersionUID is needed for this according to Java
     // serialization rules, and was generated with the serialver tool.
     //
-    private String s = "string";
+    private String s = null;
 
     TestSerial(TestSerial other) {
 

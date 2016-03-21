@@ -16,10 +16,11 @@ import org.junit.Test;
  */
 public class ApiTest {
 
-    @Test
+    @SuppressWarnings("resource")
+	@Test
     public void testBasic() {
         try {
-            new Environment(null, null);
+			new Environment(null, null);
             fail("Should get exception");
         } catch (IllegalArgumentException e) {
             // expected exception

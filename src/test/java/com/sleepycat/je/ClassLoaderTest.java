@@ -11,6 +11,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 
 import java.io.File;
+import java.net.URL;
 import java.util.Comparator;
 
 import org.junit.Before;
@@ -62,7 +63,9 @@ public class ClassLoaderTest extends DualTestCase {
 
         super.setUp();
 
-        final File classDir = new File(System.getProperty("testclassloader"));
+        URL location = ClassLoaderTest.class.getProtectionDomain().getCodeSource().getLocation();
+        
+        final File classDir = new File(location.getFile());
         final ClassLoader parentClassLoader =
             Thread.currentThread().getContextClassLoader();
         myLoader = new SimpleClassLoader(parentClassLoader, classDir);

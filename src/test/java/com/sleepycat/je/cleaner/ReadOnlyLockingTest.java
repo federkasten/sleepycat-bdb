@@ -57,7 +57,7 @@ public class ReadOnlyLockingTest extends CleanerTestBase {
     private Process readerProcess;
 
     private static File getProcessFile() {
-        return new File(System.getProperty(TestUtils.DEST_DIR),
+        return new File(SharedTestUtils.DEFAULT_TEST_DIR_ROOT,
                         "ReadOnlyProcessFile");
     }
 

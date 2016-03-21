@@ -18,6 +18,7 @@ import com.sleepycat.je.DbInternal;
 import com.sleepycat.je.Environment;
 import com.sleepycat.je.EnvironmentConfig;
 import com.sleepycat.je.util.TestUtils;
+import com.sleepycat.util.test.SharedTestUtils;
 
 /**
  * Checks that backlog alert messages are logged when the cleaner is not able
@@ -31,7 +32,7 @@ public class BacklogAlertTest extends TestCase {
     private boolean gotAlert;
 
     public BacklogAlertTest() {
-        envHome = new File(System.getProperty(TestUtils.DEST_DIR));
+    	envHome = new File(SharedTestUtils.DEFAULT_TEST_DIR_ROOT);
     }
 
     @Override

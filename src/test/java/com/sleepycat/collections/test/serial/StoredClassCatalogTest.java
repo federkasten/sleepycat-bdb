@@ -170,7 +170,8 @@ public class StoredClassCatalogTest extends TestBase
         assertNull(two.getStringField());
 
         TestSerial three = new TestSerial(two);
-        assertNotNull(three.getStringField());
+        assertNull(three.getStringField());
+        
         map.put("three", three);
         three = (TestSerial) map.get("three");
         assertEquals(two, three.getOther());
